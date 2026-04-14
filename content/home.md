@@ -1,0 +1,104 @@
+---
+title: "Ecossustentabilidade e Conforto na Ecopousada Miriti"
+slug: "home"
+description: "A Ecopousada Miriti une charme, conforto e um firme compromisso com a sustentabilidade no coração do bairro Campina, em Belém. Ideal para delegações, instituições e profissionais em missão oficial, oferece um refúgio tranquilo e sustentável em meio à cidade."
+ogImage: "https://assets.api.gamma.app/6dpnife8tjs3dtw/screenshots/zbbvnutttua1o0d/vdw77o0z5hp3lkn/slide/nWbe1y1yU8_8fifubQbtq9neotY"
+---
+
+# 
+
+![](https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/6dpnife8tjs3dtw/edited-images/7C9UrY4fH5--B8rEtk1Oy.png)
+
+Ecossustentabilidade e Conforto na Ecopousada Miriti
+
+A Ecopousada Miriti une charme, conforto e um firme compromisso com a sustentabilidade no coração do bairro Campina, em Belém. Ideal para delegações, instituições e profissionais em missão oficial, oferece um refúgio tranquilo e sustentável em meio à cidade.
+
+Localização Central e Tranquila para Máxima Conveniência
+
+Situada na Rua Padre Prudencio, 656, no bairro Campina, a Ecopousada Miriti alia acesso fácil aos pontos estratégicos de Belém com a serenidade de um bairro residencial. Sua localização privilegiada permite deslocamentos rápidos para os principais locais da cidade, tornando-a ideal para delegações, instituições e profissionais em missão oficial.
+
+*   A apenas 2 minutos da Praça da República
+    
+
+*   5 minutos da Estação das Docas
+    
+
+*   20 minutos do Aeroporto Internacional
+    
+
+*   3 minutos do histórico Theatro da Paz
+    
+
+Sustentabilidade Integrada ao Respeito pela História
+
+Fundada em 2009, a Ecopousada Miriti destaca-se por sua abordagem sustentável: preservou a edificação original em vez de reconstruir, reduzindo impactos ambientais e valorizando o patrimônio local. Essa escolha traduz um compromisso genuíno com a sustentabilidade e o respeito cultural.
+
+Sistema de esgoto com filtro biológico que preserva o meio ambiente
+
+Aquecimento de água por energia solar, reduzindo consumo energético
+
+Equipamentos certificados com selo de eficiência energética tipo A
+
+Energia limpa proveniente de fazendas solares locais
+
+Compra consciente de insumos provenientes da comunidade e região
+
+Jardins internos foram criados ao reabrir áreas antes pavimentadas, promovendo infiltração natural da água da chuva e regenerando o verde urbano, o que gera uma atmosfera acolhedora e saudável para os hóspedes.
+
+Acomodações Espaçosas e Serviços Pensados no Bem-Estar
+
+![](https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/6dpnife8tjs3dtw/8071602ac55748619e57e5c00417de1a/original/Captura-de-Tela-2025-09-10-as-15.18.55.png)
+
+A Ecopousada oferece 12 apartamentos elegantes que acomodam até 30 pessoas, projetados para proporcionar conforto com ventilação natural e uma decoração que celebra a cultura regional. Cada ambiente é silencioso, promovendo descanso e foco.
+
+*   Ar-condicionado split para climatização personalizada
+    
+
+*   Frigobar, Smart TV e Wi-Fi para conveniência conectada
+    
+
+*   Banheiro privativo com amenidades ecológicas
+    
+
+*   Roupas de cama e banho de alta qualidade, limpeza diária garantida
+    
+
+Além disso, a pousada dispõe de recepção 24 horas bilíngue e espaços para coworking e reuniões, assegurando comodidade e segurança para delegações, instituições e profissionais em missões oficiais.
+
+Facilidades e Políticas de Reserva
+
+Na Ecopousada, buscamos oferecer um processo de reserva e políticas claras para garantir uma experiência tranquila e segura para todos os nossos hóspedes, especialmente para profissionais em missão, delegações e grupos.
+
+**Condições de Estadia:**
+
+*   **Check-in:** a partir das 14:00
+    
+
+*   **Check-out:** até 12:00 (meio-dia)
+    
+
+*   **Identificação:** É obrigatória a apresentação de documento de identificação de todos os hóspedes no momento do check-in.
+    
+
+**Política de Cancelamento:**
+
+*   **Cancelamento ou alteração com mais de 72 horas de antecedência:** O hóspede terá direito a um crédito para uma nova data de estadia ou à devolução integral do valor pago.
+    
+
+*   **Cancelamento ou alteração com menos de 72 horas de antecedência:** Será aplicada uma multa equivalente ao valor de uma diária. O saldo restante poderá ser utilizado como crédito para uma futura reserva ou devolvido, com o devido desconto da multa aplicada.
+    
+
+Contato Direto para Reservas e Informações
+
+Para garantir sua estadia na Ecopousada Miriti, ideal para delegações, instituições e profissionais em missão oficial, ou esclarecer dúvidas, entre em contato:
+
+*   Email: [ecopousadamiriti@hotmail.com](mailto:ecopousadamiriti@hotmail.com)
+    
+
+*   WhatsApp: [+55 91 98444-8586](https://wa.me/5591984448586)
+    
+
+*   Instagram: [@ecopousadamiriti](https://www.instagram.com/ecopousadamiriti/)
+    
+
+> Nossa equipe está pronta para recebê-lo com atenção personalizada, alinhando conforto e sustentabilidade em sua visita a Belém.

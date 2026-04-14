@@ -2,6 +2,9 @@ const { chromium } = require('playwright');
 const fs = require('fs');
 const path = require('path');
 const { URL } = require('url');
+const TurndownService = require('turndown');
+
+const turndownService = new TurndownService();
 
 const CONFIG = {
     baseUrl: 'https://miritipousada.com.br',
@@ -11,7 +14,7 @@ const CONFIG = {
 };
 
 // Create directories
-[CONFIG.outputDir, CONFIG.assetsDir, path.join(CONFIG.assetsDir, 'images'), path.join(CONFIG.assetsDir, 'docs')].forEach(dir => {
+[CONFIG.outputDir, CONFIG.assetsDir].forEach(dir => {
     if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
 });
 
@@ -39,7 +42,7 @@ async function capture() {
             await page.evaluate(async () => {
                 await new Promise(resolve => {
                     let totalHeight = 0;
-                    let distance = 200;
+                    let distance = 300;
                     let timer = setInterval(() => {
                         let scrollHeight = document.body.scrollHeight;
                         window.scrollBy(0, distance);
@@ -53,23 +56,27 @@ async function capture() {
             });
 
             // Extract Content
-            const content = await page.evaluate(() => {
-                const main = document.querySelector('main') || document.querySelector('#content') || document.body;
+            const data = await page.evaluate(() => {
+                const main = document.querySelector('main') || document.querySelector('#content') || document.querySelector('.elementor') || document.body;
                 
                 // Clean up some common clutter
                 const clonedMain = main.cloneNode(true);
-                clonedMain.querySelectorAll('script, style, nav, footer, header').forEach(el => el.remove());
+                clonedMain.querySelectorAll('script, style, nav, footer, header, .header, .footer').forEach(el => el.remove());
                 
                 return {
                     title: document.title,
                     h1: document.querySelector('h1')?.innerText?.trim() || '',
-                    text: clonedMain.innerText.trim().replace(/\n{3,}/g, '\n\n'),
+                    html: clonedMain.innerHTML,
                     meta: {
                         description: document.querySelector('meta[name="description"]')?.content || '',
                         keywords: document.querySelector('meta[name="keywords"]')?.content || '',
+                        ogImage: document.querySelector('meta[property="og:image"]')?.content || '',
                     }
                 };
             });
+
+            // Convert to Markdown
+            const markdown = turndownService.turndown(data.html);
 
             // Map External Media (YouTube/Instagram)
             const embeds = await page.evaluate(() => {
@@ -99,14 +106,15 @@ async function capture() {
             const urlObj = new URL(url);
             let slug = urlObj.pathname === '/' ? 'home' : urlObj.pathname.replace(/^\/|\/$/g, '').replace(/\//g, '-');
             const mdContent = `---
-title: "${content.title}"
+title: "${data.title}"
 slug: "${slug}"
-description: "${content.meta.description}"
+description: "${data.meta.description}"
+ogImage: "${data.meta.ogImage}"
 ---
 
-# ${content.h1}
+# ${data.h1}
 
-${content.text}
+${markdown}
 ${embedMarkdown}`;
             
             fs.writeFileSync(path.join(CONFIG.outputDir, `${slug}.md`), mdContent);
@@ -115,7 +123,7 @@ ${embedMarkdown}`;
             sitemap.push({
                 url,
                 slug,
-                title: content.title,
+                title: data.title,
                 depth,
                 parent
             });
@@ -129,7 +137,10 @@ ${embedMarkdown}`;
                 document.querySelectorAll('img, a[href$=".pdf"], a[href$=".doc"], a[href$=".docx"]').forEach(el => {
                     const src = el.src || el.href;
                     if (!src) return;
-                    if (src.startsWith(window.location.origin) || src.includes(window.location.hostname)) {
+                    // Download if local OR from gamma.app/imgproxy
+                    if (src.startsWith(window.location.origin) || 
+                        src.includes(window.location.hostname) || 
+                        src.includes('gamma.app')) {
                         foundAssets.push(src);
                     } else if (src.startsWith('http')) {
                         foundExternals.push(src);
@@ -151,20 +162,21 @@ ${embedMarkdown}`;
 
             externals.forEach(ext => externalDependencies.add(ext));
 
-            // Download Assets
+            // Download Assets (organized by slug)
+            const slugAssetDir = path.join(CONFIG.assetsDir, slug);
+            if (!fs.existsSync(slugAssetDir)) fs.mkdirSync(slugAssetDir, { recursive: true });
+
             for (const assetUrl of assets) {
                 try {
                     const assetUrlObj = new URL(assetUrl);
                     const assetName = path.basename(assetUrlObj.pathname);
-                    if (!assetName) continue;
+                    if (!assetName || !/\.(jpg|jpeg|png|gif|svg|webp|pdf|doc|docx)$/i.test(assetName)) continue;
                     
-                    const isImage = /\.(jpg|jpeg|png|gif|svg|webp)$/i.test(assetName);
-                    const subDir = isImage ? 'images' : 'docs';
-                    const dest = path.join(CONFIG.assetsDir, subDir, assetName);
+                    const dest = path.join(slugAssetDir, assetName);
                     
                     if (!fs.existsSync(dest)) {
-                        console.log(`[Asset] Downloading ${assetName}`);
-                        const response = await page.goto(assetUrl, { waitUntil: 'networkidle' });
+                        console.log(`[Asset] Downloading ${assetName} for ${slug}`);
+                        const response = await page.goto(assetUrl, { waitUntil: 'networkidle', timeout: 30000 });
                         if (response && response.status() === 200) {
                             fs.writeFileSync(dest, await response.body());
                         }
@@ -180,7 +192,16 @@ ${embedMarkdown}`;
             const internalLinks = await page.evaluate((baseUrl) => {
                 return Array.from(document.querySelectorAll('a'))
                     .map(a => a.href)
-                    .filter(href => href && href.startsWith(baseUrl) && !href.includes('#') && !href.includes('mailto:') && !href.includes('tel:'));
+                    .filter(href => {
+                        try {
+                            const urlObj = new URL(href);
+                            return href.startsWith(baseUrl) && 
+                                   !href.includes('#') && 
+                                   !href.includes('mailto:') && 
+                                   !href.includes('tel:') &&
+                                   !/\.(jpg|jpeg|png|gif|svg|webp|pdf|doc|docx)$/i.test(urlObj.pathname);
+                        } catch (e) { return false; }
+                    });
             }, CONFIG.baseUrl);
 
             for (const link of internalLinks) {
