@@ -4,6 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { CheckCircle2 } from 'lucide-react';
+import { getAssetPath } from '@/lib/utils';
 
 const ArchitectureSection = () => {
   return (
@@ -18,7 +19,7 @@ const ArchitectureSection = () => {
         >
           <div className="leaf-shape overflow-hidden shadow-2xl aspect-[4/5] relative">
             <Image 
-              src="/assets/landing/asymmetric-arch.jpg" 
+              src={getAssetPath("/assets/landing/asymmetric-arch.jpg")} 
               alt="Interiores que celebram a cultura regional" 
               fill
               className="object-cover"

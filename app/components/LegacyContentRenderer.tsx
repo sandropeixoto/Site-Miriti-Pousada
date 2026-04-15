@@ -2,8 +2,8 @@
 
 import ReactMarkdown from 'react-markdown';
 import { motion } from 'framer-motion';
-
 import Image from 'next/image';
+import { getAssetPath } from '@/lib/utils';
 
 interface Props {
   content: string;
@@ -22,7 +22,7 @@ export default function LegacyContentRenderer({ content, slug }: Props) {
             // Map external Gamma images to local ones if they were downloaded
             const src = typeof props.src === 'string' ? props.src : '';
             const fileName = src.split('/').pop();
-            const localSrc = `/assets/${slug}/${fileName}`;
+            const localSrc = getAssetPath(`assets/${slug}/${fileName}`);
             
             return (
               <motion.div 

@@ -4,6 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Sun, Droplets, Building2 } from 'lucide-react';
+import { getAssetPath } from '@/lib/utils';
 
 const SustainabilityGrid = () => {
   const container = {
@@ -78,7 +79,7 @@ const SustainabilityGrid = () => {
           </div>
           <div className="w-full md:w-1/2 overflow-hidden rounded-lg relative aspect-video">
             <Image 
-              src="/assets/landing/bento-arch.jpg" 
+              src={getAssetPath("/assets/landing/bento-arch.jpg")} 
               alt="Detalhe arquitetônico sustentável da Pousada Miriti" 
               fill
               className="object-cover grayscale hover:grayscale-0 transition-all duration-700"

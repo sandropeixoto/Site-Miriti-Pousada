@@ -13,11 +13,13 @@ const manrope = Manrope({
   subsets: ["latin"],
 });
 
+import { getAssetPath } from "@/lib/utils";
+
 export const metadata: Metadata = {
   title: "Ecopousada Miriti | Ecossustentabilidade e Conforto em Belém",
   description: "A Ecopousada Miriti une charme, conforto e um firme compromisso com a sustentabilidade no coração de Belém.",
   openGraph: {
-    images: ["assets/home/7C9UrY4fH5--B8rEtk1Oy.png"],
+    images: [getAssetPath("assets/home/7C9UrY4fH5--B8rEtk1Oy.png")],
   }
 };
 

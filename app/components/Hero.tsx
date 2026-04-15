@@ -4,13 +4,14 @@ import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Leaf } from 'lucide-react';
+import { getAssetPath } from '@/lib/utils';
 
 const Hero = () => {
   return (
     <section className="relative min-h-[90vh] flex items-center px-8 py-24 overflow-hidden">
       <div className="absolute inset-0 z-0">
         <Image 
-          src="/assets/landing/hero.jpg" 
+          src={getAssetPath("/assets/landing/hero.jpg")} 
           alt="Ecopousada Miriti - Fachada Sustentável" 
           fill
           priority

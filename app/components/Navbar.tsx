@@ -4,6 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { getAssetPath } from '@/lib/utils';
 
 const Navbar = () => {
   return (
@@ -14,7 +15,7 @@ const Navbar = () => {
     >
       <Link href="/" className="flex items-center gap-3">
         <Image 
-          src="/assets/home/7C9UrY4fH5--B8rEtk1Oy.png" 
+          src={getAssetPath("/assets/home/7C9UrY4fH5--B8rEtk1Oy.png")} 
           alt="Pousada Miriti Logo" 
           width={40} 
           height={40}

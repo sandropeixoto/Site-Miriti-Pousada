@@ -3,15 +3,16 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { getAssetPath } from '@/lib/utils';
 
 const Gallery = () => {
   const images = [
-    { src: '/assets/landing/gallery-1.jpg', alt: 'Suíte Miriti', class: 'rounded-xl' },
-    { src: '/assets/landing/gallery-2.jpg', alt: 'Detalhes Regionais', class: 'asymmetric-card-1' },
-    { src: '/assets/landing/gallery-3.jpg', alt: 'Ambiente Sustentável', class: 'rounded-xl' },
-    { src: '/assets/landing/gallery-4.jpg', alt: 'Iluminação Natural', class: 'rounded-xl' },
-    { src: '/assets/landing/gallery-5.jpg', alt: 'Café da Manhã Regional', class: 'leaf-shape' },
-    { src: '/assets/landing/gallery-6.jpg', alt: 'Jardins Internos', class: 'rounded-xl' },
+    { src: getAssetPath('/assets/landing/gallery-1.jpg'), alt: 'Suíte Miriti', class: 'rounded-xl' },
+    { src: getAssetPath('/assets/landing/gallery-2.jpg'), alt: 'Detalhes Regionais', class: 'asymmetric-card-1' },
+    { src: getAssetPath('/assets/landing/gallery-3.jpg'), alt: 'Ambiente Sustentável', class: 'rounded-xl' },
+    { src: getAssetPath('/assets/landing/gallery-4.jpg'), alt: 'Iluminação Natural', class: 'rounded-xl' },
+    { src: getAssetPath('/assets/landing/gallery-5.jpg'), alt: 'Café da Manhã Regional', class: 'leaf-shape' },
+    { src: getAssetPath('/assets/landing/gallery-6.jpg'), alt: 'Jardins Internos', class: 'rounded-xl' },
   ];
 
   return (
