@@ -1,33 +1,66 @@
 @import "tailwindcss";
 
 @theme {
-  --color-miriti-dark: #1a2f24;
-  --color-miriti-leaf: #3d5a45;
-  --color-miriti-cream: #fdfaf5;
-  --color-miriti-accent: #c4a484;
+  /* Stitch Color Palette */
+  --color-primary: #163422;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #2d4b37;
+  --color-on-primary-container: #99baa1;
   
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-serif: 'Playfair Display', serif;
+  --color-secondary: #77583d;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #ffd5b3;
+  --color-on-secondary-container: #7a5a40;
+
+  --color-tertiary: #382c1f;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-container: #504234;
+  --color-on-tertiary-container: #c2af9c;
+
+  --color-background: #fcf9f2;
+  --color-on-background: #1c1c18;
+
+  --color-surface: #fcf9f2;
+  --color-on-surface: #1c1c18;
+  --color-surface-variant: #e5e2db;
+  --color-on-surface-variant: #424843;
+  
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f6f3ec;
+  --color-surface-container: #f1eee7;
+  --color-surface-container-high: #ebe8e1;
+  --color-surface-container-highest: #e5e2db;
+
+  --color-error: #ba1a1a;
+  --color-on-error: #ffffff;
+
+  /* Typography Variables from layout.tsx */
+  --font-headline: var(--font-newsreader);
+  --font-body: var(--font-manrope);
+  --font-label: var(--font-manrope);
+  
+  /* Radii */
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
 }
 
 @layer base {
   body {
-    @apply bg-miriti-cream text-miriti-dark antialiased;
-    font-family: var(--font-sans);
-  }
-  
-  h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-serif);
-    @apply font-semibold;
+    @apply bg-background text-on-background antialiased;
+    font-family: var(--font-body);
   }
 }
 
 @layer components {
-  .premium-card {
-    @apply bg-white rounded-2xl shadow-sm border border-stone-100 p-8 transition-all hover:shadow-md;
+  .leaf-shape {
+    border-top-left-radius: 6rem;
+    border-bottom-right-radius: 6rem;
   }
   
-  .btn-primary {
-    @apply bg-miriti-leaf text-white px-6 py-3 rounded-full font-medium transition-all hover:bg-miriti-dark hover:scale-105 active:scale-95;
+  .asymmetric-card-1 {
+    border-top-left-radius: 1.5rem;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 1.5rem;
+    border-bottom-left-radius: 0.5rem;
   }
 }

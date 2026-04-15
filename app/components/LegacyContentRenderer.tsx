@@ -3,6 +3,8 @@
 import ReactMarkdown from 'react-markdown';
 import { motion } from 'framer-motion';
 
+import Image from 'next/image';
+
 interface Props {
   content: string;
   slug: string;
@@ -20,25 +22,21 @@ export default function LegacyContentRenderer({ content, slug }: Props) {
             // Map external Gamma images to local ones if they were downloaded
             const src = typeof props.src === 'string' ? props.src : '';
             const fileName = src.split('/').pop();
-            const localSrc = `assets/${slug}/${fileName}`;
+            const localSrc = `/assets/${slug}/${fileName}`;
             
             return (
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="my-12"
+                className="my-12 relative aspect-video"
               >
-                <img 
-                  {...props} 
+                <Image 
                   src={localSrc} 
-                  className="w-full h-auto object-cover rounded-2xl shadow-xl"
                   alt={props.alt || 'Ecopousada Miriti'}
-                  onError={(e) => {
-                    // Fallback to original if local fails
-                    const fallbackSrc = typeof props.src === 'string' ? props.src : '';
-                    (e.target as HTMLImageElement).src = fallbackSrc;
-                  }}
+                  fill
+                  className="object-cover rounded-2xl shadow-xl"
+                  unoptimized // Keep as unoptimized due to static export constraints and potential external fallbacks
                 />
               </motion.div>
             );
