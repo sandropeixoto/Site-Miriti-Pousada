@@ -13,7 +13,7 @@ const LocationSection = () => {
   ];
 
   return (
-    <section id="localização" className="py-24 bg-surface overflow-hidden">
+    <section id="localizacao" className="py-24 bg-surface overflow-hidden">
       <div className="max-w-7xl mx-auto px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <motion.div 

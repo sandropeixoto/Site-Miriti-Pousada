@@ -8,7 +8,7 @@ import { getAssetPath } from '@/lib/utils';
 
 const PoliciesSection = () => {
   return (
-    <section id="políticas" className="py-24 bg-surface-container-lowest overflow-hidden">
+    <section id="facilidades" className="py-24 bg-surface-container-lowest overflow-hidden">
       <div className="max-w-7xl mx-auto px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           
@@ -85,7 +85,7 @@ const PoliciesSection = () => {
           >
             <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl">
               <Image 
-                src={getAssetPath("/assets/landing/hero.jpg")} 
+                src={getAssetPath("/assets/home/Captura-de-Tela-2025-09-10-as-15.15.40.png")} 
                 alt="Hospitalidade Ecopousada Miriti" 
                 fill
                 className="object-cover"

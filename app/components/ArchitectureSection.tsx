@@ -8,7 +8,7 @@ import { getAssetPath } from '@/lib/utils';
 
 const ArchitectureSection = () => {
   return (
-    <section id="suítes" className="py-24 bg-surface-container-lowest overflow-hidden">
+    <section id="suites" className="py-24 bg-surface-container-lowest overflow-hidden">
       <div className="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
         <motion.div 
           initial={{ opacity: 0, x: -50 }}

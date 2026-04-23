@@ -27,17 +27,22 @@ const Navbar = () => {
       </Link>
 
       <div className="hidden md:flex gap-8 items-center">
-        {['Suítes', 'Sustentabilidade', 'Localização', 'Políticas'].map((item) => (
+        {[
+          { label: 'Sustentabilidade', href: '#sustentabilidade' },
+          { label: 'Suites', href: '#suites' },
+          { label: 'Localização', href: '#localizacao' },
+          { label: 'Facilidades', href: '#facilidades' }
+        ].map((item) => (
           <Link 
-            key={item}
-            href={`#${item.toLowerCase()}`}
+            key={item.label}
+            href={item.href}
             className={`font-label text-sm uppercase tracking-wider transition-colors duration-300 ${
-              item === 'Sustentabilidade' 
+              item.label === 'Sustentabilidade' 
                 ? 'text-primary font-bold border-b-2 border-primary/30' 
                 : 'text-on-surface-variant hover:text-primary'
             }`}
           >
-            {item}
+            {item.label}
           </Link>
         ))}
       </div>
