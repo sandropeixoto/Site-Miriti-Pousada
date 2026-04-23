@@ -35,10 +35,13 @@ const Hero = () => {
           </p>
           
           <div className="flex flex-col md:flex-row gap-4">
-            <button className="bg-primary text-on-primary px-8 py-4 rounded-xl font-semibold text-lg flex items-center justify-center gap-2 hover:bg-primary/90 transition-all hover:scale-105 shadow-lg group">
+            <Link 
+              href="#sustentabilidade"
+              className="bg-primary text-on-primary px-8 py-4 rounded-xl font-semibold text-lg flex items-center justify-center gap-2 hover:bg-primary/90 transition-all hover:scale-105 shadow-lg group"
+            >
               <Leaf className="w-5 h-5 group-hover:rotate-12 transition-transform" aria-hidden="true" />
               Conheça nossas práticas
-            </button>
+            </Link>
             <Link 
               href="#contato"
               className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white/20 transition-all hover:scale-105 active:scale-95 flex items-center justify-center"

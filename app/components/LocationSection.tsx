@@ -65,12 +65,18 @@ const LocationSection = () => {
             transition={{ duration: 0.8 }}
             className="relative rounded-[2rem] overflow-hidden shadow-2xl aspect-square md:aspect-auto md:h-[600px] bg-surface-container-high group"
           >
-            {/* Placeholder for Google Maps or an artistic map illustration */}
-            <div className="absolute inset-0 bg-[url('https://api.mapbox.com/styles/v1/mapbox/light-v10/static/pin-s-l+2ecc71(-48.4902,1.4558)/-48.4902,1.4558,15,0/1000x1000?access_token=pk.eyJ1IjoibWlyaXRpIiwiYSI6ImNrcW8xbmZ6eDAyMjAybm54YmZ4YmZ4eSJ9')] bg-cover bg-center transition-transform duration-700 group-hover:scale-110">
-              <div className="absolute inset-0 bg-primary/10 mix-blend-multiply"></div>
-            </div>
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.3323490724835!2d-48.49277492415133!3d-1.4557999985305105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x92a48e967a2e8739%3A0xb3b0c8e19c3e9803!2sEcopousada%20Miriti!5e0!3m2!1spt-BR!2sbr!4v1711200000000!5m2!1spt-BR!2sbr" 
+              width="100%" 
+              height="100%" 
+              style={{ border: 0 }} 
+              allowFullScreen 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+              className="grayscale contrast-125 group-hover:grayscale-0 transition-all duration-700"
+            ></iframe>
             
-            <div className="absolute bottom-8 left-8 right-8 p-6 bg-white/90 backdrop-blur-md rounded-2xl shadow-xl border border-white/20">
+            <div className="absolute bottom-8 left-8 right-8 p-6 bg-white/90 backdrop-blur-md rounded-2xl shadow-xl border border-white/20 pointer-events-none">
               <div className="flex items-center justify-between">
                 <div>
                   <h4 className="font-bold text-primary">Ecopousada Miriti</h4>
