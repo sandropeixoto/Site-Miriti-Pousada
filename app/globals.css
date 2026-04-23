@@ -45,6 +45,10 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
   body {
     @apply bg-background text-on-background antialiased;
     font-family: var(--font-body);

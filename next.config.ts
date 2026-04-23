@@ -1,12 +1,11 @@
 import type { NextConfig } from "next";
 
 const isProd = process.env.NODE_ENV === 'production';
-const repoName = 'Site-Miriti-Pousada';
-
 const nextConfig: NextConfig = {
   output: 'export',
-  basePath: isProd ? `/${repoName}` : '',
-  assetPrefix: isProd ? `/${repoName}/` : '',
+  // Quando usando domínio próprio no GitHub Pages, o basePath deve ser vazio
+  basePath: '',
+  assetPrefix: '',
   images: {
     unoptimized: true,
   },
