@@ -36,10 +36,10 @@ const SustainabilityGrid = () => {
           variants={item}
           className="md:col-span-2 p-12 bg-surface-container-low rounded-xl flex flex-col justify-center border border-surface-variant/20"
         >
-          <span className="font-label text-secondary uppercase tracking-widest text-sm mb-4 font-bold">Impacto Positivo</span>
-          <h2 className="font-headline text-4xl text-primary mb-6 tracking-tight">Nossa pegada é verde, nossa essência é paraense.</h2>
+          <span className="font-label text-secondary uppercase tracking-widest text-sm mb-4 font-bold">Desde 2009</span>
+          <h2 className="font-headline text-4xl text-primary mb-6 tracking-tight italic">Sustentabilidade Integrada ao Respeito pela História</h2>
           <p className="text-on-surface-variant text-lg leading-relaxed max-w-prose">
-            Preservamos a edificação original para valorizar o patrimônio de Belém, integrando jardins internos que regeneram o verde urbano e promovem a infiltração natural.
+            A Ecopousada Miriti preservou a edificação original em vez de reconstruir, reduzindo impactos ambientais e valorizando o patrimônio de Belém. Uma escolha que traduz um compromisso genuíno com a sustentabilidade e o respeito cultural.
           </p>
         </motion.div>
 
@@ -50,8 +50,8 @@ const SustainabilityGrid = () => {
         >
           <Sun className="w-10 h-10 text-primary-fixed" aria-hidden="true" />
           <div>
-            <h3 className="text-5xl font-headline mb-2 italic tracking-tighter">100%</h3>
-            <p className="font-label opacity-90 text-sm">Energia limpa de fazendas solares e aquecimento solar de água.</p>
+            <h3 className="text-5xl font-headline mb-2 italic tracking-tighter">Limpa</h3>
+            <p className="font-label opacity-90 text-sm italic">Energia de fazendas solares e aquecimento solar de água, reduzindo o consumo energético.</p>
           </div>
         </motion.div>
 
@@ -62,8 +62,8 @@ const SustainabilityGrid = () => {
         >
           <Droplets className="w-10 h-10" aria-hidden="true" />
           <div>
-            <h3 className="text-5xl font-headline mb-2 italic tracking-tighter">Eco</h3>
-            <p className="font-label opacity-90 text-sm">Filtro biológico para esgoto e jardins que preservam o lençol freático.</p>
+            <h3 className="text-5xl font-headline mb-2 italic tracking-tighter">Ciclo</h3>
+            <p className="font-label opacity-90 text-sm italic">Sistema de esgoto com filtro biológico e preservação do meio ambiente local.</p>
           </div>
         </motion.div>
 
@@ -74,13 +74,16 @@ const SustainabilityGrid = () => {
         >
           <div className="flex-1">
             <Building2 className="w-10 h-10 mb-4 text-tertiary-fixed-dim" aria-hidden="true" />
-            <h3 className="text-3xl font-headline mb-4 tracking-tight">Eficiência Energética</h3>
-            <p className="font-body opacity-80 max-w-prose">Equipamentos certificados (Selo A) e ventilação natural que celebra a cultura regional e reduz o consumo.</p>
+            <h3 className="text-3xl font-headline mb-4 tracking-tight italic">Eficiência & Regeneração</h3>
+            <p className="font-body opacity-80 max-w-prose mb-4">
+              Equipamentos Selo A e compra consciente de insumos da comunidade. Nossos jardins internos regeneram o verde urbano em áreas antes pavimentadas.
+            </p>
+            <p className="text-xs font-label uppercase tracking-widest opacity-60">Infiltração natural e bem-estar</p>
           </div>
           <div className="w-full md:w-1/2 overflow-hidden rounded-lg relative aspect-video">
             <Image 
               src={getAssetPath("/assets/landing/bento-arch.jpg")} 
-              alt="Detalhe arquitetônico sustentável da Pousada Miriti" 
+              alt="Arquitetura sustentável e regeneração verde" 
               fill
               className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
             />

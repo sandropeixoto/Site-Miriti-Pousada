@@ -27,7 +27,7 @@ const Navbar = () => {
       </Link>
 
       <div className="hidden md:flex gap-8 items-center">
-        {['Suítes', 'Experiências', 'Sustentabilidade', 'Localização'].map((item) => (
+        {['Suítes', 'Sustentabilidade', 'Localização', 'Políticas'].map((item) => (
           <Link 
             key={item}
             href={`#${item.toLowerCase()}`}
@@ -42,9 +42,12 @@ const Navbar = () => {
         ))}
       </div>
 
-      <button className="bg-primary text-on-primary px-6 py-2 rounded-xl font-label text-sm font-semibold hover:opacity-90 transition-all hover:scale-105 active:scale-95 shadow-sm">
+      <Link 
+        href="#contato"
+        className="bg-primary text-on-primary px-6 py-2 rounded-xl font-label text-sm font-semibold hover:opacity-90 transition-all hover:scale-105 active:scale-95 shadow-sm"
+      >
         Reservar Agora
-      </button>
+      </Link>
     </motion.nav>
   );
 };

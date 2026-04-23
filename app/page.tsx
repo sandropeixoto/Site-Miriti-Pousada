@@ -5,7 +5,8 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import SustainabilityGrid from './components/SustainabilityGrid';
 import ArchitectureSection from './components/ArchitectureSection';
-import Gallery from './components/Gallery';
+import LocationSection from './components/LocationSection';
+import PoliciesSection from './components/PoliciesSection';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
 
@@ -22,7 +23,8 @@ export default function Home() {
         <Hero />
         <SustainabilityGrid />
         <ArchitectureSection />
-        <Gallery />
+        <LocationSection />
+        <PoliciesSection />
         <CTA />
       </main>
 
